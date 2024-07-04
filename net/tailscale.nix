@@ -3,9 +3,9 @@
   pkgs,
   ...
 }: {
-  age.secrets.tailscale-authkey.file = ../secrets/tailscale-auth.age;
-
   config = {
+    age.secrets.tailscale-authkey.file = ../secrets/tailscale-auth.age;
+
     networking.firewall = {
       allowedUDPPorts = [
         config.services.tailscale.port
@@ -44,6 +44,7 @@
 
         # otherwise authenticate with tailscale
         ${tailscale}/bin/tailscale up -authkey "file:${config.age.secrets.tailscale-authkey.path}"
+        #${tailscale}/bin/tailscale up -authkey "file:/dev/null"
       '';
     };
   };
