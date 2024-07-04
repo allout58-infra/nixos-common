@@ -4,7 +4,7 @@
   ];
   config.services.openssh = {
     enable = true;
-    openFirwall = true;
+    openFirewall = true;
 
     extraConfig = "Protocol 2";
   };
