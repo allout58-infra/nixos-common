@@ -14,5 +14,5 @@ let
 
   allSystems = [nix-media];
 in {
-  "tailscale-auth.age".publicKeys = [nix-media];
+  "tailscale-auth.age".publicKeys = [nix-media jth-gaming-desktop-jhollowell];
 }
