@@ -2,6 +2,8 @@
   username = "jhollowell";
 in {
   config = {
+    age.secrets."${username}-email".file = ../secrets/my-email.age;
+
     users.users."${username}" = {
       isNormalUser = true;
       extraGroups = ["wheel" "networkmanager" "docker"];
@@ -25,5 +27,19 @@ in {
 
     # ensure user can run nix commands
     nix.settings.allowed-users = ["${username}"];
+
+    programs.git = {
+      enable = true;
+      userName = "${username}";
+      userEmail = "${config.age.secrets.${username} - email.path}";
+
+      extraConfig = {
+        init.defaultBranch = "main";
+        push.autoSetupRemote = true;
+        aliases = {
+          co = "checkout";
+        };
+      };
+    };
   };
 }
