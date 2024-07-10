@@ -1,4 +1,4 @@
-{...}: let
+{config, ...}: let
   username = "jhollowell";
 in {
   config = {
@@ -32,7 +32,7 @@ in {
     programs.git = {
       enable = true;
       userName = "${username}";
-      userEmail = "${config.age.secrets.${username} - email.path}";
+      userEmail.source = "${config.age.secrets."${username}-email".path}";
 
       extraConfig = {
         init.defaultBranch = "main";
