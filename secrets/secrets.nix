@@ -16,5 +16,6 @@ let
   allSystems = [nix-media];
 in {
   "tailscale-auth.age".publicKeys = [nix-media] ++ allUsers;
-  "my-email.age".publicKeys = [nix-media] ++ allUsers;
+  "my-email.age".publicKeys = allSystems ++ allUsers;
+  "cloudflare-dns-challenge.age".publicKeys = [nix-media] ++ allUsers;
 }
