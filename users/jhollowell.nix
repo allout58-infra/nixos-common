@@ -29,18 +29,18 @@ in {
     # ensure user can run nix commands
     nix.settings.allowed-users = ["${username}"];
 
-    programs.git = {
-      enable = true;
-      userName = "${username}";
-      userEmail.source = "${config.age.secrets."${username}-email".path}";
+    # programs.git = {
+    #   enable = true;
+    #   userName = "${username}";
+    #   userEmail.source = "${config.age.secrets."${username}-email".path}";
 
-      extraConfig = {
-        init.defaultBranch = "main";
-        push.autoSetupRemote = true;
-        aliases = {
-          co = "checkout";
-        };
-      };
-    };
+    #   extraConfig = {
+    #     init.defaultBranch = "main";
+    #     push.autoSetupRemote = true;
+    #     aliases = {
+    #       co = "checkout";
+    #     };
+    #   };
+    # };
   };
 }
