@@ -1,8 +1,11 @@
 {config, ...}: let
   username = "jhollowell";
 in {
+  imports = [
+    ../secrets/secrets-export.nix
+  ];
   config = {
-    age.secrets."${username}-email".file = ../secrets/my-email.age;
+  
 
     users.users."${username}" = {
       isNormalUser = true;

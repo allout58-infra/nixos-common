@@ -39,6 +39,7 @@
         diag = import ./workloads/diag.nix;
         ssh = import ./workloads/ssh.nix;
       };
+      secrets = import ./secrets/secrets-export.nix;
     };
 
     # format the nix code in this flake
