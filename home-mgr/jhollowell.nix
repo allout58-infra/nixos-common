@@ -20,8 +20,20 @@ in
 
   programs.git = {
     enable = true;
-    username = "James Hollowell";
-    userEmail = "jamesthollowell@gmail.com";
+    userName = "James Hollowell";
+
+    userEmail.source = "${config.age.secrets."jhollowell-email".path}";
+
+    extraConfig = {
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+      help.autocorrect = "prompt";
+      aliases = {
+        co = "checkout";
+        cb = "checkout -b";
+        graph = "log --graph --abrev-commit --decorate";
+      };
+    };
   };
 
   # This value determines the home Manager release that your
