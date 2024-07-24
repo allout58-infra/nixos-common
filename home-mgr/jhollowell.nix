@@ -2,6 +2,7 @@
 let
   dotFileRepo = builtins.fetchGit {
     url = "https://github.com/allout58/dotfiles";
+    rev = "ed82212c5923b715384079666a15e62c1cdf846b";
   };
 in
 {
@@ -21,7 +22,6 @@ in
   programs.git = {
     enable = true;
     userName = "James Hollowell";
-
     userEmail.source = "${config.age.secrets."jhollowell-email".path}";
 
     extraConfig = {
