@@ -7,6 +7,10 @@
   # The release branch of the NixOS/nixpkgs repository on GitHub.
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    allout58-dotfiles = {
+      url = "github:allout58/dotfiles/main";
+      flake = false;
+    };
   };
 
   # It is also possible to "inherit" an input from another input. This is useful to minimize
@@ -21,6 +25,7 @@
   outputs = all @ {
     self,
     nixpkgs,
+    allout58-dotfiles,
     ...
   }: let
     system = "x86_64-linux";
@@ -41,7 +46,7 @@
       };
       secrets = import ./secrets/secrets-export.nix;
       home-manager = {
-        jhollowell = import ./home-mgr/jhollowell.nix;
+        jhollowell = (import ./home-mgr/jhollowell.nix) {dotFileRepo = allout58-dotfiles;};
       };
     };
 

@@ -1,18 +1,12 @@
-{ config, pkgs, ... }:
-# let
-  # dotFileRepo = builtins.fetchGit {
-  #   url = "https://github.com/allout58/dotfiles";
-  #   rev = "ed82212c5923b715384079666a15e62c1cdf846b";
-  # };
-# in
+{ dotFileRepo }: { config, pkgs, ... }:
 {
   home.username = "jhollowell";
   home.homeDirectory = "/home/jhollowell";
 
   # https://github.com/allout58/dotfiles
 
-  # home.file.".vimrc".source = "${dotFileRepo}/.vimrc";
-  # home.file.".bashrc".source = "${dotFileRepo}/.bashrc";
+  home.file.".vimrc".source = "${dotFileRepo}/.vimrc";
+  home.file.".bashrc".source = "${dotFileRepo}/.bashrc";
   # home.file.".gitrc".source = "${dotFileRepo}/.gitrc";
 
   home.packages = with pkgs; [
