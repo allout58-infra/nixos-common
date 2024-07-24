@@ -1,5 +1,5 @@
 {
-  description = "A template that shows all standard flake outputs";
+  description = "A set of common Nix/NixOS modules for allout58";
 
   # Inputs
   # https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#flake-inputs
@@ -40,6 +40,9 @@
         ssh = import ./workloads/ssh.nix;
       };
       secrets = import ./secrets/secrets-export.nix;
+      home-manager = {
+        jhollowell = import ./home-mgr/jhollowell.nix;
+      };
     };
 
     # format the nix code in this flake
