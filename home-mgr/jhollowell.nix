@@ -6,10 +6,6 @@
   # };
 # in
 {
-  imports = [
-    ../secrets/secrets-export.nix
-  ];
-  
   home.username = "jhollowell";
   home.homeDirectory = "/home/jhollowell";
 
@@ -26,7 +22,7 @@
   programs.git = {
     enable = true;
     userName = "James Hollowell";
-    userEmail.source = "${config.age.secrets."jhollowell-email".path}";
+    userEmail.source = "jamesthollowell@gmail.com";
 
     extraConfig = {
       init.defaultBranch = "main";
