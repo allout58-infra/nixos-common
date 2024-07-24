@@ -6,6 +6,10 @@
   # };
 # in
 {
+  imports = [
+    ../secrets/secrets-export.nix
+  ];
+  
   home.username = "jhollowell";
   home.homeDirectory = "/home/jhollowell";
 
