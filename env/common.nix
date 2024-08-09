@@ -40,7 +40,6 @@
     programs.git.prompt.enable = true;
 
     programs.bash = {
-      enable = true;
       promptInit = "PS1=\"\t \[\e[37m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]] \w \[\e[33m\]\`_git_ps1\`\[\e[m\] \[\e[37m\]\\$\[\e[m\] \"";
       undistractMe = {
         enable = true;
