@@ -43,6 +43,7 @@
         deep-diag = import ./workloads/deep-diag.nix;
         diag = import ./workloads/diag.nix;
         ssh = import ./workloads/ssh.nix;
+        plasma = import ./workloads/plasma.nix;
       };
       secrets = import ./secrets/secrets-export.nix;
       home-manager = {

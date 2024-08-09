@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "allout58-dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720471600,
+        "narHash": "sha256-Ck+Vg95nxdqJFtp6MVdhTV7RWw1XfGh0swxHdT27xkk=",
+        "owner": "allout58",
+        "repo": "dotfiles",
+        "rev": "ed82212c5923b715384079666a15e62c1cdf846b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "allout58",
+        "ref": "main",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1719956923,
@@ -18,6 +35,7 @@
     },
     "root": {
       "inputs": {
+        "allout58-dotfiles": "allout58-dotfiles",
         "nixpkgs": "nixpkgs"
       }
     }

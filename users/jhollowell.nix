@@ -5,8 +5,6 @@ in {
     ../secrets/secrets-export.nix
   ];
   config = {
-  
-
     users.users."${username}" = {
       isNormalUser = true;
       extraGroups = ["wheel" "networkmanager" "docker"];
