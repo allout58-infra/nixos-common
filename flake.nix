@@ -45,7 +45,7 @@
         ssh = import ./workloads/ssh.nix;
         plasma = import ./workloads/plasma.nix;
       };
-      secrets = import ./secrets/secrets-export.nix;
+      # secrets = import ./secrets/secrets-export.nix;
       home-manager = {
         jhollowell = (import ./home-mgr/jhollowell.nix) {dotFileRepo = allout58-dotfiles;};
       };
