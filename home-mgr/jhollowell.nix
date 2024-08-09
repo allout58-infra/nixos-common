@@ -31,9 +31,6 @@
         graph = "log --graph --abrev-commit --decorate";
       };
     };
-
-    # Adds utility functions to make building PS1 easier
-    prompt.enable = true;
   };
 
   programs.bash = {
