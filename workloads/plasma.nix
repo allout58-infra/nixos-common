@@ -22,6 +22,7 @@
 
   programs.firefox.enable = true;
   programs.kdeconnect.enable = true;
+  nix.gc.automatic = false; # disable nix GC because we have nh
   programs.nh = {
     enable = true;
     clean = {

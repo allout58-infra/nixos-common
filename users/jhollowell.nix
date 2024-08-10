@@ -4,6 +4,7 @@ in {
   config = {
     users.users."${username}" = {
       isNormalUser = true;
+      description = "James Hollowell";
       extraGroups = ["wheel" "networkmanager" "docker"];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHlvLsl5o1Ln9s7QVqz5eFbymS8Xp34VrznbnOZ789m jhollowell@jth-gaming-desktop"
