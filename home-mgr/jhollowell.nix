@@ -8,15 +8,9 @@
 
   # https://github.com/allout58/dotfiles
 
-  # home.file.".vimrc".source = "${dotFileRepo}/.vimrc";
-  home.file.".bashrc".source = "${dotFileRepo}/.bashrc";
+  home.file.".vimrc".source = "${dotFileRepo}/.vimrc";
+  home.file.".bashrc_gh".source = "${dotFileRepo}/.bashrc";
   # home.file.".gitrc".source = "${dotFileRepo}/.gitrc";
-
-  programs.vim = {
-    enable = true;
-    defaultEditor = true;
-    extraConfig.source = "${dotFileRepo}/.vimrc";
-  };
 
   programs.git = {
     enable = true;
