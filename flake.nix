@@ -11,6 +11,13 @@
       url = "github:allout58/dotfiles/main";
       flake = false;
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      # optional, not necessary for the module
+      inputs.nixpkgs.follows = "nixpkgs";
+      # optionally choose not to download darwin deps (saves some resources on Linux)
+      inputs.darwin.follows = "";
+    };
   };
 
   # It is also possible to "inherit" an input from another input. This is useful to minimize
@@ -45,7 +52,7 @@
         ssh = import ./workloads/ssh.nix;
         plasma = import ./workloads/plasma.nix;
       };
-      # secrets = import ./secrets/secrets-export.nix;
+      secrets = import ./secrets/secrets-export.nix;
       home-manager = {
         jhollowell = (import ./home-mgr/jhollowell.nix) {dotFileRepo = allout58-dotfiles;};
       };
