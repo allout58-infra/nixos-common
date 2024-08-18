@@ -38,7 +38,7 @@
     system = "x86_64-linux";
   in {
     nixosModules = {
-      latestNix = {pkgs}: {nix.package = pkgs.nixVersions.nix_2_23;};
+      latestNix = {pkgs, ...}: {nix.package = pkgs.nixVersions.nix_2_23;};
       env.common = import ./env/common.nix;
       net.firewall = import ./net/firewall.nix;
       net.tailscale = import ./net/tailscale.nix;
