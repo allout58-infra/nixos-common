@@ -2,7 +2,20 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  # Override discover to add flatpak backend
+  discover-wrapped =
+    pkgs.symlinkJoin
+    {
+      name = "discover-flatpak-backend";
+      paths = [pkgs.kdePackages.discover];
+      buildInputs = [pkgs.makeWrapper];
+      postBuild = ''
+        wrapProgram $out/bin/plasma-discover --add-flags "--backends flatpak"
+      '';
+    };
+in {
+  system.nixos.tags = ["with-plasma6"];
   imports = [
     ./desktop.nix
   ];
@@ -20,14 +33,13 @@
     xkbVariant = "";
   };
 
-  programs.firefox.enable = true;
   programs.kdeconnect.enable = true;
-  nix.gc.automatic = false; # disable nix GC because we have nh
-  programs.nh = {
-    enable = true;
-    clean = {
-      enable = true;
-      extraArgs = "--keep 5 --keep-since 3d";
-    };
-  };
+
+  environment.systemPackages = with pkgs; [
+    kdePackages.kaulk
+    kdePackages.plasma-vault
+    kdePackages.kamso
+    kdePackages.kate
+    discover-wrapped # store
+  ];
 }

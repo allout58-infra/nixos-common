@@ -24,4 +24,18 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  services = {
+    flatpak.enable = true;
+    packagekit.enable = true;
+  };
+  environment.systemPackages = with pkgs; [
+    starship
+    jq
+  ];
+  programs = {
+    firefox.enable = true;
+    kdeconnect.enable = true;
+    starship.enable = true;
+    command-not-found.enable = true;
+  };
 }

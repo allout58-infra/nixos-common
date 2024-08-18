@@ -17,6 +17,8 @@
       enable = true;
     };
 
+    # Replace my custom service with https://github.com/NixOS/nixpkgs/blob/nixos-24.05/nixos/modules/services/networking/tailscale.nix#L117
+
     # create a oneshot job to authenticate to Tailscale
     systemd.services.tailscale-autoconnect = {
       description = "Automatic connection to Tailscale";
