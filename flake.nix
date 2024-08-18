@@ -40,7 +40,7 @@
     system = "x86_64-linux";
   in {
     nixosModules = {
-      latestNix = {nix.package = nixpkgs-unstable.legacyPackages.nix;};
+      latestNix = ({pkgs-unstable}:{nix.package = pkgs-unstable.nix;}) {pkgs-unstable = nixpkgs-unstable.legacyPackages;};
       env.common = import ./env/common.nix;
       net.firewall = import ./net/firewall.nix;
       net.tailscale = import ./net/tailscale.nix;
