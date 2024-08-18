@@ -38,7 +38,7 @@ in {
   environment.systemPackages = with pkgs; [
     kdePackages.kalk
     kdePackages.plasma-vault
-    kdePackages.kamoso
+#     kdePackages.kamoso
     kdePackages.kate
     discover-wrapped # store
   ];
