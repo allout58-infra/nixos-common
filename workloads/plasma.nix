@@ -36,7 +36,7 @@ in {
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
-    kdePackages.kaulk
+    kdePackages.kalk
     kdePackages.plasma-vault
     kdePackages.kamso
     kdePackages.kate
