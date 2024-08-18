@@ -7,6 +7,7 @@
   # The release branch of the NixOS/nixpkgs repository on GitHub.
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     allout58-dotfiles = {
       url = "github:allout58/dotfiles/main";
       flake = false;
@@ -32,12 +33,14 @@
   outputs = all @ {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     allout58-dotfiles,
     ...
   }: let
     system = "x86_64-linux";
   in {
     nixosModules = {
+      latestNix = {nix.package = nixpkgs-unstable.legacyPackages.nix;};
       env.common = import ./env/common.nix;
       net.firewall = import ./net/firewall.nix;
       net.tailscale = import ./net/tailscale.nix;
