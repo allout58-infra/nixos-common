@@ -38,4 +38,7 @@
     starship.enable = true;
     command-not-found.enable = true;
   };
+
+  # Enable plymouth bootanimation
+  boot.plymouth.enable = true;
 }
