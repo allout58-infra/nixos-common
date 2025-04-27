@@ -38,18 +38,12 @@
     kdeconnect.enable = true;
     starship.enable = true;
     command-not-found.enable = true;
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
   };
 
   # Enable plymouth bootanimation
   boot.plymouth.enable = true;
-
-  # Enable AppImages to just run
-  boot.binfmt.registrations.appimage = {
-    wrapInterpreterInShell = false;
-    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-    recognitionType = "magic";
-    offset = 0;
-    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-    magicOrExtension = ''\x7fELF....AI\x02'';
-  };
 }
