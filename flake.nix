@@ -52,6 +52,7 @@
         diag = import ./workloads/diag.nix;
         ssh = import ./workloads/ssh.nix;
         plasma = import ./workloads/plasma.nix;
+        docker = import ./workloads/docker.nix;
       };
       secrets = import ./secrets/secrets-export.nix;
       secret-inputs = import ./secrets/secret-inputs.nix;
