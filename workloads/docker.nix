@@ -2,7 +2,7 @@
   # Enable the Docker service
   virtualisation.docker = {
     enable = true;
-    autoPrune = true;
+    autoPrune.enable = true;
   };
 
   # Install docker-compose
