@@ -6,7 +6,7 @@
 
   # The release branch of the NixOS/nixpkgs repository on GitHub.
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     allout58-dotfiles = {
       url = "github:allout58/dotfiles/main";
       flake = false;
@@ -38,7 +38,7 @@
     system = "x86_64-linux";
   in {
     nixosModules = {
-      latestNix = {pkgs, ...}: {nix.package = pkgs.nixVersions.nix_2_23;};
+      latestNix = {pkgs, ...}: {nix.package = pkgs.nixVersions.nix_2_28;};
       env.common = import ./env/common.nix;
       net.firewall = import ./net/firewall.nix;
       net.tailscale = import ./net/tailscale.nix;
